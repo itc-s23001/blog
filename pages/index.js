@@ -1,3 +1,4 @@
+import Container from 'components/container'
 import Hero from 'components/hero'
 const props = {
   title: 'CUBE',
@@ -7,7 +8,9 @@ const props = {
 const Home = () => {
   return (
     <>
-      <Hero {...props} />
+      <Container>
+        <Hero {...props} />
+      </Container>
     </>
   )
 }
