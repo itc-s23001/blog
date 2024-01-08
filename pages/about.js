@@ -1,3 +1,4 @@
+import Meta from 'components/meta'
 import Container from 'components/container'
 import Hero from 'components/hero'
 import PostBody from 'components/post-body'
@@ -12,8 +13,14 @@ import Image from 'next/image'
 const props = { title: 'About', subtitle: 'About development activities' }
 const About = () => (
   <Container>
+    <Meta
+      pageTitle='アバウト'
+      pageDesc='about development activities'
+      pageImg={eyecatch.src}
+      pageImgW={eyecatch.width}
+      pageImgH={eyecatch.height}
+    />
     <Hero {...props} />
-
     <figure>
       <Image
         src={eyecatch}
