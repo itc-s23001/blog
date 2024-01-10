@@ -13,8 +13,10 @@ export default function Meta ({
   const {
     siteTitle,
     siteDesc,
-    siteUrl
-    // Add other properties as needed
+    siteUrl,
+    siteLocale,
+    siteType,
+    siteIcon
   } = siteMeta
 
   const title = pageTitle ? `${pageTitle} | ${siteTitle}` : siteTitle
@@ -36,11 +38,19 @@ export default function Meta ({
       <meta name='description' content={desc} />
       <meta property='og:description' content={desc} />
 
+      <link rel='canonical' href={url} />
+      <meta property='og:url' content={url} />
+
       <meta property='og:image' content={imgUrl} />
       <meta property='og:image:width' content={imgW} />
       <meta property='og:image:height' content={imgH} />
 
-      {/* Add other meta tags as needed */}
+      <meta property='og:site_name' content={siteTitle} />
+      <meta property='og:type' content={siteType} />
+      <meta property='og:locale' content={siteLocale} />
+
+      <link rel='icon' href={siteIcon} />
+      <link rel='apple-touch-icon' href={siteIcon} />
     </Head>
   )
 }
